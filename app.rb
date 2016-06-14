@@ -2,8 +2,8 @@ require 'yaml'
 
 days = YAML.load_file('schedule.yml')
 counter = 0
-start = Date.parse("2016-05-23")
-days.each_with_index do |day, index|
+start = Date.parse(days[0]["start-date"])
+days[1]["days"].each_with_index do |day, index|
   puts "<div class='day container'>"
   is_saturday = (start + counter).wday == 6
   counter += 2 if is_saturday
