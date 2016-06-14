@@ -8,7 +8,8 @@ days.each_with_index do |day, index|
   is_saturday = (start + counter).wday == 6
   counter += 2 if is_saturday
   today = (start + counter).strftime("%A, %m/%d")
-  puts "<h2 id='#{index}'><a href='##{index}'>#{today}</a></h2>"
+  yyyymmdd = Date.parse(today).strftime("%F")
+  puts "<h2 id='#{yyyymmdd}'><a href='##{yyyymmdd}'>#{today}</a></h2>"
   day["day"].each do |events|
     events.each do |time, details|
       title = details["title"]
