@@ -1,6 +1,6 @@
 require 'yaml'
 
-days = YAML.load_file('../schedule.yml')
+days = YAML.load_file('schedule.yml')
 counter = 0
 start = Date.parse("2016-05-23")
 days.each_with_index do |day, index|
